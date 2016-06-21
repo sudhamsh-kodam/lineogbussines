@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="im-centered">
+  <div class="row main">
+    <div class="panel-heading">
+      <div class="panel-title text-center">
+        <h1 class="title">Product Details</h1>
+        <hr />
+      </div>
+    </div>
+    <div class="main-login main-center">
+      <form class="form-horizontal" method="post" action="#">
+
+        <div class="form-group">
+          <label for="url" class="cols-sm-2 control-label">Image Url</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+              <input type="url" class="form-control" name="url" id="url"  placeholder="Enter image url" ng-model="product.imageUrl"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="productName" class="cols-sm-2 control-label">Product</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="productName" id="productName"  placeholder="Enter your Product" ng-model="product.productName"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="Code" class="cols-sm-2 control-label">Code</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="Code" id="Code"  placeholder="Enter product code" ng-model="product.productCode"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="price" class="cols-sm-2 control-label">Price</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="price" id="price"  placeholder="Enter product price" ng-model="product.productPrice"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <button type="button" class="btn btn-primary btn-lg btn-block login-button">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
