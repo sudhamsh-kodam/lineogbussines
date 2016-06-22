@@ -2,9 +2,8 @@
   "use strict";
   angular
     .module('lineofbussinessApp')
-    .controller('aboutCtrl',  ["$scope","$uibModal","$log",
-      function  aboutCtrl($scope,$uibModal,$log) {
-
+    .controller('aboutCtrl',  ["$scope","$uibModal","$log","$rootScope",
+      function  aboutCtrl($scope,$uibModal,$log,$rootScope) {
         $scope.open = function (size) {
 
           var modalInstance = $uibModal.open({
@@ -26,8 +25,12 @@
           });
         };
 
+        $rootScope.$on('newobj',function (event,obj) {
+          vm.products.push(obj);
+          console.log(event,obj,"in on");
+        });
 
-      $scope.test = "testing";
+        $scope.test = "testing";
         var vm = this;
         vm.showImage =false;
         vm.toggleImage = function () {
@@ -66,7 +69,7 @@
             "price" : 12,
             "imageUrl" : "http://lorempixel.com/100/100/sports"
           },
-          {" productId " : 1,
+          {" productId " : 5,
             "productName" : "Leaf Rake",
             "productCode" : "GDN-0011",
             "releaseDate" : "March 19, 2016",
@@ -77,22 +80,27 @@
         ];
         vm.addProduct = function () {
 
-        }
-    }]);
+        };
+
+      }]);
 }());
 
-angular.module('lineofbussinessApp').controller('ModalInstanceCtrl', function (/*$scope, $uibModalInstance, items*/) {
-/*
-  $scope.items = items;
-  $scope.selected = {
-    item: $scope.items[0]
+angular.module('lineofbussinessApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, $rootScope) {
+  $scope.product = {};
+  /*  $scope.items = items;
+   $scope.selected = {
+   item: $scope.items[0]
+   };*/
+  $scope.save = function () {
+    $rootScope.$emit('newobj',$scope.product);
+    console.log($scope.product);
+    $scope.cancel();
   };
-
   $scope.ok = function () {
     $uibModalInstance.close($scope.selected.item);
   };
 
   $scope.cancel = function () {
     $uibModalInstance.dismiss('cancel');
-  }*/;
+  };
 });

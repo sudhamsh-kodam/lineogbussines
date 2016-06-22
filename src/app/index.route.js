@@ -24,7 +24,13 @@
         url: '/contact',
         templateUrl: 'app/contact/contact.html',
         controller: 'contactCtrl',
-        controllerAs : 'contact'
+        controllerAs : 'vm'
+      })
+      .state('productdetailview', {
+        url: '/product/:productId',
+        templateUrl: 'app/about/productDetailView.html',
+        controller: 'productdetailCtrl',
+        controllerAs : 'vm'
       })
     ;
 
