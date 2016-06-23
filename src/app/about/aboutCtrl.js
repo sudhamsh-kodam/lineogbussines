@@ -2,8 +2,8 @@
   "use strict";
   angular
     .module('lineofbussinessApp')
-    .controller('aboutCtrl',  ["$scope","$uibModal","$log","$rootScope",
-      function  aboutCtrl($scope,$uibModal,$log,$rootScope) {
+    .controller('aboutCtrl',  ["$scope","$uibModal","$log","$rootScope","productdetail",
+      function  aboutCtrl($scope,$uibModal,$log,$rootScope,productdetail) {
         $scope.open = function (size) {
 
           var modalInstance = $uibModal.open({
@@ -37,7 +37,8 @@
           vm.showImage = !vm.showImage;
         };
         vm.products = [
-          {" productId " : 1,
+          {
+            "productId" : 1,
             "productName" : "Leaf Rake",
             "productCode" : "GDN-0011",
             "releaseDate" : "March 19, 2016",
@@ -45,33 +46,37 @@
             "price" : 12,
             "imageUrl" : "http://lorempixel.com/100/100/nature"
           },
-          {" productId " : 2,
+          {
+            "productId" : 2,
             "productName" : "Leaf Rake",
-            "productCode" : "GDN-0011",
+            "productCode" : "GDN-0012",
             "releaseDate" : "March 19, 2016",
             "Description": "Leaf rake with 48 inch handle",
             "price" : 14,
             "imageUrl" : "http://lorempixel.com/100/100/fashion"
           },
-          {" productId " : 3,
+          {
+            "productId" : 3,
             "productName" : "Leaf Rake",
-            "productCode" : "GDN-0011",
+            "productCode" : "GDN-0013",
             "releaseDate" : "March 19, 2016",
             "Description": "Leaf rake with 48 inch handle",
             "price" : 17,
             "imageUrl" : "http://lorempixel.com/100/100/sports/1"
           },
-          {" productId " : 4,
+          {
+            "productId" : 4,
             "productName" : "Leaf Rake",
-            "productCode" : "GDN-0011",
+            "productCode" : "GDN-0014",
             "releaseDate" : "March 19, 2016",
             "Description": "Leaf rake with 48 inch handle",
             "price" : 12,
             "imageUrl" : "http://lorempixel.com/100/100/sports"
           },
-          {" productId " : 5,
+          {
+            "productId" : 5,
             "productName" : "Leaf Rake",
-            "productCode" : "GDN-0011",
+            "productCode" : "GDN-0015",
             "releaseDate" : "March 19, 2016",
             "Description": "Leaf rake with 48 inch handle",
             "price" : 10,
@@ -82,7 +87,28 @@
 
         };
 
-      }]);
+        $scope.rowdetail = function (rowdata) {
+          productdetail.setData(rowdata);
+        }
+
+
+
+      }])
+  .service('productdetail',function () {
+
+      this.details = {};
+      this.setData = function(rowData){
+
+        this.details = rowData.product;
+        console.log(this.details)
+
+      };
+       this.getData = function(){
+         return this.details;
+       }
+
+
+  })
 }());
 
 angular.module('lineofbussinessApp').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, $rootScope) {

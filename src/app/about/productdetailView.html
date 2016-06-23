@@ -1,32 +1,32 @@
 <div class="container">
   <div class="panel panel-primary">
-    <div class="panel-heading">{{vm.title}}</div>
+    <div class="panel-heading">{{productData.title}}</div>
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-2">Name:</div>
-            <div class="col-md-6">{{vm.products.productName}}</div>
+            <div class="col-md-6">{{productData.productName}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">Code:</div>
-            <div class="col-md-6">{{vm.products.productCode}}</div>
+            <div class="col-md-6">{{productData.productCode}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">releaseDate:</div>
-            <div class="col-md-6">{{vm.products.releaseDate | date}}</div>
+            <div class="col-md-6">{{productData.releaseDate | date}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">Price:</div>
-            <div class="col-md-6">{{vm.products.price}}</div>
+            <div class="col-md-6">{{productData.price}}</div>
           </div>
           <div class="row">
             <div class="col-md-2">Description:</div>
-            <div class="col-md-6">{{vm.products.description}}</div>
+            <div class="col-md-6">{{productData.Description}}</div>
           </div>
         </div>
         <div class="col-md-6">
-          <img ng-src="{{vm.products.imageUrl}}" class="center-block img-responsive" >
+          <img ng-src="{{productData.imageUrl}}" class="center-block img-responsive" >
         </div>
       </div>
     </div>

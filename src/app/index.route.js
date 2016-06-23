@@ -27,10 +27,15 @@
         controllerAs : 'vm'
       })
       .state('productdetailview', {
-        url: '/product/:productId',
+        url: '/products/:productId',
         templateUrl: 'app/about/productDetailView.html',
         controller: 'productdetailCtrl',
-        controllerAs : 'vm'
+        controllerAs : 'vm',
+        resolve :{
+         resolveFun: function (productdetail) {
+           console.log(productdetail.getdata());
+               return productdetail.getdata()}
+        }
       })
     ;
 

@@ -52,7 +52,7 @@
                  ng-if="vm.showImage"
         style="margin: 2px;width: 50px"></td>
         <td>
-          <a ui-sref="productdetailview({productId: product.productId})">
+          <a ui-sref="productdetailview({productId:product.productId})" ng-click="rowdetail(this)">
             {{product.productName}}</a>
         </td>
         <td>{{product.productCode}}</td>
