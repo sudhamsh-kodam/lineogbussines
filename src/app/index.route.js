@@ -31,11 +31,25 @@
         templateUrl: 'app/about/productDetailView.html',
         controller: 'productdetailCtrl',
         controllerAs : 'vm',
-        resolve :{
+       /* resolve :{
          resolveFun: function (productdetail) {
            console.log(productdetail.getdata());
                return productdetail.getdata()}
-        }
+        }*/
+      })
+      .state('productEdit', {
+        url: '/product/edit/:productId',
+        templateUrl: 'app/about/Edit/productEdit.html',
+        controller: 'productEditCtrl',
+        controllerAs : 'vm'
+      })
+      .state('productEdit.info', {
+        url: '/info',
+        templateUrl: 'app/Edit/productEditInfoView.html'
+      })
+      .state('productEdit.price', {
+        url: '/price',
+        templateUrl: 'app/Edit/productEditPriceView.html'
       })
     ;
 

@@ -4,10 +4,10 @@
     .module("lineofbussinessApp")
     .controller("productdetailCtrl",productdetailCtrl);
 
-  function productdetailCtrl($scope,productdetail,resolveFun) {
+  function productdetailCtrl($scope,productdetail) {
     $scope.productData ={};
-    var testData = resolveFun;
-    console.log(testData);
+    /*var testData = resolveFun;
+    console.log(testData);*/
 
     $scope.productData = productdetail.getData();
 
